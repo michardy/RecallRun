@@ -10,7 +10,7 @@ void setup() {
   if (digitalRead(btnPin) == 0){
     mode = true;
   }
-  for (int i=0; i<512; i+=3){
+  for (int i=0; i<1000; i+=3){
     Serial.println(EEPROM.read(i)+', '+EEPROM.read(i+1)+', '+EEPROM.read(i+2));
   }
 }
@@ -19,11 +19,13 @@ void loop() {
   if (!(mode)){
     //do things
     /*int val = 4;
-    EEPROM.write(iter, val);
-    iter++
-    EEPROM.write(iter, val);
-    iter++
-    EEPROM.write(iter, val);
-    iter++*/
-    }
+    if (iter < 997){
+      EEPROM.write(iter, val);
+      iter++
+      EEPROM.write(iter, val);
+      iter++
+      EEPROM.write(iter, val);
+      iter++
+    }*/
+  }
 }
